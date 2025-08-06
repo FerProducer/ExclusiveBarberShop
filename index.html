@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Exclusive Barber Shop – Estilo y Precisión</title>
+  <meta name="description" content="Más que un corte, una experiencia premium. Reserva tu cita en Exclusive Barber Shop." />
+  <meta name="keywords" content="barbería premium, barbería en [ciudad], corte de cabello, afeitado con navaja, barber shop" />
+
+  <!-- Tipografías -->
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --negro: #0a0a0a;
+      --dorado: #d4af37;
+      --blanco: #ffffff;
+      --gris: #1a1a1a;
+    }
+    * {margin:0; padding:0; box-sizing:border-box;}
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: var(--negro);
+      color: var(--blanco);
+      overflow-x: hidden;
+    }
+    h1, h2, h3 {
+      font-family: 'Bebas Neue', sans-serif;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    /* Hero */
+    header {
+      position: relative;
+      height: 100vh;
+      background: url('https://images.pexels.com/photos/1570806/pexels-photo-1570806.jpeg') center/cover no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      overflow: hidden;
+    }
+    header::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.6);
+    }
+    header .content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      padding: 2rem;
+    }
+    header img.logo {
+      width: 200px;
+      max-width: 80%;
+      margin-bottom: 1rem;
+      filter: drop-shadow(0px 3px 6px rgba(0,0,0,0.6));
+    }
+    header h1 {
+      font-size: 4rem;
+      color: var(--dorado);
+      text-shadow: 0 2px 6px rgba(0,0,0,0.7);
+    }
+    header p {
+      font-size: 1.5rem;
+      margin: 1rem 0 2rem;
+    }
+    .btn {
+      background: linear-gradient(135deg, var(--dorado), #b9972e);
+      padding: 1rem 2.2rem;
+      color: var(--negro);
+      font-weight: bold;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: transform 0.3s, box-shadow 0.3s;
+      display: inline-block;
+    }
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 15px rgba(212,175,55,0.5);
+    }
+
+    /* Secciones */
+    section {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+    h2 {
+      color: var(--dorado);
+      font-size: 2.8rem;
+      text-align: center;
+      margin-bottom: 2.5rem;
+      position: relative;
+    }
+    h2::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 3px;
+      background: var(--dorado);
+      margin: 0.5rem auto 0;
+    }
+
+    /* Servicios */
+    .servicios {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+    }
+    .card {
+      background: var(--gris);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .card:hover img {
+      transform: scale(1.05);
+    }
+    .card h3 {
+      color: var(--dorado);
+      margin: 1rem;
+      font-size: 1.8rem;
+    }
+    .card p {
+      margin: 0 1rem 1rem;
+      font-size: 0.95rem;
+    }
+    .precio {
+      margin: 0 1rem 1.5rem;
+      font-weight: bold;
+      color: var(--blanco);
+      font-size: 1.1rem;
+    }
+
+    /* Formulario */
+    form {
+      display: grid;
+      gap: 1rem;
+      max-width: 500px;
+      margin: auto;
+    }
+    input, select {
+      padding: 0.9rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    /* WhatsApp botón flotante */
+    .whatsapp-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #25d366;
+      color: white;
+      padding: 0.9rem;
+      border-radius: 50%;
+      font-size: 1.6rem;
+      text-decoration: none;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+      animation: pulse 1.5s infinite;
+      z-index: 1000;
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+
+    /* Footer */
+    footer {
+      background: #000;
+      text-align: center;
+      padding: 2rem;
+      color: #aaa;
+      font-size: 0.9rem;
+    }
+
+    /* Responsive */
+    @media(max-width:768px) {
+      header h1 { font-size: 2.5rem; }
+      header p { font-size: 1.1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <header>
+    <div class="content">
+      <img src="https://raw.githubusercontent.com/FerProducer/ExclusiveBarberShop/refs/heads/main/525027982_122111085956946779_3440800263070590765_n.jpg" alt="Exotic Barber Shop Logo" class="logo">
+      <h1>Exotic Barber Shop</h1>
+      <p>"Más que un corte, una experiencia"</p>
+      <a href="#reservar" class="btn">Reserva tu cita</a>
+    </div>
+  </header>
+
+  <!-- Servicios -->
+  <section id="servicios">
+    <h2>Servicios Premium</h2>
+    <div class="servicios">
+      <div class="card">
+        <img src="https://images.pexels.com/photos/3998404/pexels-photo-3998404.jpeg">
+        <h3>Corte Clásico</h3>
+        <p>Un corte tradicional adaptado a tu estilo.</p>
+        <p class="precio">$300 MXN</p>
+      </div>
+      <div class="card">
+        <img src="https://images.pexels.com/photos/12706272/pexels-photo-12706272.jpeg" alt="Corte Moderno">
+        <h3>Corte Moderno / Fades</h3>
+        <p>Estilo actual y preciso con degradados perfectos.</p>
+        <p class="precio">$350 MXN</p>
+      </div>
+      <div class="card">
+        <img src="https://images.pexels.com/photos/2076930/pexels-photo-2076930.jpeg" alt="Afeitado">
+        <h3>Afeitado con Navaja</h3>
+        <p>Con toalla caliente y acabado perfecto.</p>
+        <p class="precio">$250 MXN</p>
+      </div>
+      <div class="card">
+        <img src="https://images.pexels.com/photos/10024234/pexels-photo-10024234.jpeg" alt="Tratamientos">
+        <h3>Tratamientos Capilares y Faciales</h3>
+        <p>Reparación y cuidado para cabello y piel.</p>
+        <p class="precio">$400 MXN</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reserva -->
+  <section id="reservar">
+    <h2>Reserva tu Cita</h2>
+    <form onsubmit="enviarReserva(event)">
+      <input type="text" id="nombre" placeholder="Tu nombre" required>
+      <input type="tel" id="telefono" placeholder="Tu teléfono" required>
+      <select id="servicio" required>
+        <option value="">Selecciona un servicio</option>
+        <option>Corte Clásico</option>
+        <option>Corte Moderno / Fades</option>
+        <option>Afeitado con Navaja</option>
+        <option>Tratamientos Capilares y Faciales</option>
+      </select>
+      <input type="date" id="fecha" required>
+      <input type="time" id="hora" required>
+      <button type="submit" class="btn">Reservar vía WhatsApp</button>
+    </form>
+  </section>
+
+  <!-- Contacto -->
+  <section>
+    <h2>Visítanos</h2>
+    <p style="text-align:center; margin-bottom: 1rem;">
+      Av. Constitución 1606, Loma de Pérez, 33050 Delicias, Chih.
+    </p>
+    <div style="display: flex; justify-content: center;">
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3516.1073399552893!2d-105.48766802457124!3d28.204051203409463!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86eb1433086b0e1d%3A0x2eee3800534bb6ea!2sAv.%20Constituci%C3%B3n%201606%2C%20Loma%20de%20Per%C3%A9z%2C%2033050%20Delicias%2C%20Chih.!5e0!3m2!1ses!2smx!4v1754446305945!5m2!1ses!2smx" 
+        width="100%" 
+        height="450" 
+        style="border:0; border-radius:12px; max-width: 900px;" 
+        allowfullscreen="" 
+        loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 Exclusive Barber Shop | Todos los derechos reservados</p>
+  </footer>
+
+  <!-- Botón WhatsApp -->
+  <a href="https://wa.me/5216391719540" class="whatsapp-btn" target="_blank">💬</a>
+
+  <script>
+    function enviarReserva(e) {
+      e.preventDefault();
+      const nombre = document.getElementById('nombre').value;
+      const telefono = document.getElementById('telefono').value;
+      const servicio = document.getElementById('servicio').value;
+      const fecha = document.getElementById('fecha').value;
+      const hora = document.getElementById('hora').value;
+      const mensaje = `Hola, soy ${nombre}. Quiero reservar una cita para ${servicio} el ${fecha} a las ${hora}. Mi teléfono es ${telefono}.`;
+      window.open(`https://wa.me/5216391719540?text=${encodeURIComponent(mensaje)}`, '_blank');
+    }
+  </script>
+
+</body>
+</html>
